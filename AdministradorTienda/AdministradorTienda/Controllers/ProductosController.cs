@@ -18,6 +18,7 @@ namespace AdministradorTienda.Controllers
         {
             _context = context;
         }
+        //ff
 
         // GET: Productos
         public async Task<IActionResult> Index()
