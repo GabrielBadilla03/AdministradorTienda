@@ -430,16 +430,12 @@
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml*",
-              "RelativeToolTip": "AdministradorTienda\\Views\\Shared\\_Layout.cshtml*",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAjwLEAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAjwI8AAAB0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-16T07:22:17.706Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
@@ -523,8 +519,7 @@
               "RelativeToolTip": "AdministradorTienda\\Controllers\\ProductosController.cs",
               "ViewState": "AgIAAJoAAAAAAAAAAAAAAJ8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T07:17:16.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-16T07:17:16.418Z"
             },
             {
               "$type": "Document",
@@ -621,6 +616,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T07:19:20.607Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         },
