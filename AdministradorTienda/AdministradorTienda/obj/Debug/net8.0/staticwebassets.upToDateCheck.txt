@@ -1,5 +1,13 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\img\Carrusel\1.png
+wwwroot\img\Carrusel\2.png
+wwwroot\img\Carrusel\3.png
+wwwroot\img\Carrusel\4.png
+wwwroot\img\Carrusel\5.png
+wwwroot\img\Carrusel\6.png
+wwwroot\img\Carrusel\7.png
+wwwroot\img\Carrusel\logo-boutique.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

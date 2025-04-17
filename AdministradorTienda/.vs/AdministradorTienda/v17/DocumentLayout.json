@@ -1,97 +1,97 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\",
+  "WorkspaceRootPath": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\reportes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\reportes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\reportes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\reportes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\reportes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\reportes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\reportespagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\reportespagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\reportespagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\controllers\\alertascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\controllers\\alertascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\controllers\\alertascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\cuentacliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\cuentacliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\cuentacliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\detallepedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\pago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\users\\oagon\\desktop\\proyecto progra web avanzada\\administradortienda\\administradortienda\\administradortienda\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|c:\\proyectos\\administradortienda\\administradortienda\\administradortienda\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ABF2A33E-9AD7-4143-9065-D996EA8E8EAA}|AdministradorTienda\\AdministradorTienda.csproj|solutionrelative:administradortienda\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -104,6 +104,10 @@
           "DockedWidth": 214,
           "SelectedChildIndex": 66,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -334,19 +338,15 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Privacy.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "AdministradorTienda\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -356,9 +356,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "AdministradorTienda\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -368,9 +368,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Details.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Details.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Reportes\\Details.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Details.cshtml",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Details.cshtml",
               "RelativeToolTip": "AdministradorTienda\\Views\\Reportes\\Details.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -380,9 +380,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Index.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Index.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Reportes\\Index.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Index.cshtml",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Reportes\\Index.cshtml",
               "RelativeToolTip": "AdministradorTienda\\Views\\Reportes\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -392,22 +392,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ReportesController.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ReportesController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ReportesController.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Controllers\\ReportesController.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ReportesController.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ReportesController.cs",
               "RelativeToolTip": "AdministradorTienda\\Controllers\\ReportesController.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAAADsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T21:04:59.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T21:04:59.66Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "ReportesPagos.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\ReportesPagos.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\ReportesPagos.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\ReportesPagos.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\ReportesPagos.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\ReportesPagos.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\ReportesPagos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -417,9 +416,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Productos\\Index.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Productos\\Index.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Productos\\Index.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Productos\\Index.cshtml",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Productos\\Index.cshtml",
               "RelativeToolTip": "AdministradorTienda\\Views\\Productos\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -429,22 +428,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "AdministradorTienda\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAAEYAAAAHAAAAAAAAAA==",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "AdministradorTienda\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAjwLEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-16T07:22:17.706Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\appsettings.json",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\appsettings.json",
               "RelativeDocumentMoniker": "AdministradorTienda\\appsettings.json",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\appsettings.json",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\appsettings.json",
               "RelativeToolTip": "AdministradorTienda\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -454,9 +457,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "AlertasController.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\AlertasController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\AlertasController.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Controllers\\AlertasController.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\AlertasController.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\AlertasController.cs",
               "RelativeToolTip": "AdministradorTienda\\Controllers\\AlertasController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -466,9 +469,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "ClientesController.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ClientesController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ClientesController.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Controllers\\ClientesController.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ClientesController.cs",
               "RelativeToolTip": "AdministradorTienda\\Controllers\\ClientesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -478,9 +481,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Usuarios\\Create.cshtml",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Usuarios\\Create.cshtml",
               "RelativeDocumentMoniker": "AdministradorTienda\\Views\\Usuarios\\Create.cshtml",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Views\\Usuarios\\Create.cshtml",
               "RelativeToolTip": "AdministradorTienda\\Views\\Usuarios\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -490,9 +493,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Cliente.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Cliente.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Cliente.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Cliente.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\Cliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -502,9 +505,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "UsuariosController.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\UsuariosController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\UsuariosController.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Controllers\\UsuariosController.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "AdministradorTienda\\Controllers\\UsuariosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -514,21 +517,22 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ProductosController.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ProductosController.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Controllers\\ProductosController.cs",
               "RelativeToolTip": "AdministradorTienda\\Controllers\\ProductosController.cs",
               "ViewState": "AgIAAJoAAAAAAAAAAAAAAJ8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T07:17:16.418Z"
+              "WhenOpened": "2025-03-16T07:17:16.418Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Program.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Program.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Program.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Program.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Program.cs",
               "RelativeToolTip": "AdministradorTienda\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -538,9 +542,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "Pago.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pago.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pago.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\Pago.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pago.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pago.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\Pago.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -550,9 +554,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "DetallePedido.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\DetallePedido.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\DetallePedido.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\DetallePedido.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\DetallePedido.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\DetallePedido.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\DetallePedido.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -562,9 +566,9 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "Pedido.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pedido.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pedido.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\Pedido.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Pedido.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\Pedido.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -574,9 +578,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Usuario.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\Usuario.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -586,9 +590,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "Producto.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Producto.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Producto.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\Producto.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Producto.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Producto.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\Producto.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -598,9 +602,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "CuentaCliente.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\CuentaCliente.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\CuentaCliente.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\CuentaCliente.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\CuentaCliente.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\CuentaCliente.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\CuentaCliente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -610,17 +614,13 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Categoria.cs",
+              "DocumentMoniker": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Categoria.cs",
               "RelativeDocumentMoniker": "AdministradorTienda\\Models\\Categoria.cs",
-              "ToolTip": "C:\\Users\\oagon\\Desktop\\proyecto progra web avanzada\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Categoria.cs",
+              "ToolTip": "C:\\Proyectos\\AdministradorTienda\\AdministradorTienda\\AdministradorTienda\\Models\\Categoria.cs",
               "RelativeToolTip": "AdministradorTienda\\Models\\Categoria.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T07:19:20.607Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         },
@@ -655,10 +655,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
