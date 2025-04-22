@@ -5,10 +5,6 @@
 }
 
 <h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -45,8 +41,7 @@
 
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdUsuario">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdUsuario">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdUsuario">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.IdUsuario">Details</a> 
             </td>
         </tr>
 }

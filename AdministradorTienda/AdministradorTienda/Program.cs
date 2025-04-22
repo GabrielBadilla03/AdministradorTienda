@@ -1,8 +1,14 @@
+// Licencia: 
+// Copyright (c) [Año] [Nombre del titular de la licencia]
+// Este código se distribuye bajo la Licencia [Nombre de la Licencia].
+// Consulte el archivo LICENSE para más detalles.
+
 using AdministradorTienda.Data;
 using CasoPractico2.NoEmailSender;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Packaging;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,9 +28,11 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-    
-builder.Services.AddTransient<IEmailSender, NoEmailSender>();
 
+// Por la siguiente línea:
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
+builder.Services.AddTransient<IEmailSender, NoEmailSender>();
 
 var app = builder.Build();
 
@@ -48,7 +56,6 @@ app.MapGet("/api/ventas", async (ApplicationDbContext db, DateTime? startDate, D
 
     return Results.Ok(ventas);
 });
-
 
 app.MapGet("/api/productos", async (ApplicationDbContext db) =>
 {

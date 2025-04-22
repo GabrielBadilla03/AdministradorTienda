@@ -133,8 +133,14 @@ namespace AdministradorTienda.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "No se encontró la cuenta del cliente.");
-                    return View();
+                    // Si no hay cuenta, la creamos
+                    var nuevaCuenta = new CuentaCliente
+                    {
+                        IdCliente = IdCliente,
+                        Saldo = -Monto // Si se crea una nueva cuenta, asigna el monto del pago como saldo negativo
+                    };
+
+                    _context.CuentasClientes.Add(nuevaCuenta);
                 }
 
                 await _context.SaveChangesAsync();
@@ -151,6 +157,7 @@ namespace AdministradorTienda.Controllers
 
             return View();
         }
+
 
 
         // GET: Pagos/Edit/5
