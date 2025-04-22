@@ -18,14 +18,37 @@ namespace AdministradorTienda.Controllers
         {
             _context = context;
         }
-        
+
 
         // GET: Productos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string FiltroPor, string ValorFiltro, decimal? PrecioMin, decimal? PrecioMax)
         {
-            var applicationDbContext = _context.Productos.Include(p => p.Categoria);
-            return View(await applicationDbContext.ToListAsync());
+            var productos = _context.Productos.Include(p => p.Categoria).AsQueryable();
+
+            if (!string.IsNullOrEmpty(FiltroPor))
+            {
+                switch (FiltroPor)
+                {
+                    case "Nombre":
+                        if (!string.IsNullOrEmpty(ValorFiltro))
+                            productos = productos.Where(p => p.Nombre.Contains(ValorFiltro));
+                        break;
+                    case "Categoria":
+                        if (!string.IsNullOrEmpty(ValorFiltro))
+                            productos = productos.Where(p => p.Categoria.Nombre.Contains(ValorFiltro));
+                        break;
+                    case "Precio":
+                        if (PrecioMin.HasValue)
+                            productos = productos.Where(p => p.Precio >= PrecioMin.Value);
+                        if (PrecioMax.HasValue)
+                            productos = productos.Where(p => p.Precio <= PrecioMax.Value);
+                        break;
+                }
+            }
+
+            return View(await productos.ToListAsync());
         }
+
 
         // GET: Productos/Details/5
         public async Task<IActionResult> Details(int? id)
