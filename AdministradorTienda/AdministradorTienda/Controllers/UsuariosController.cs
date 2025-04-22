@@ -20,27 +20,31 @@ namespace AdministradorTienda.Controllers
         }
 
         // GET: Usuarios
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filtro)
         {
-            var applicationDbContext = _context.Usuarios.Include(u => u.AspNetUser);
-            return View(await applicationDbContext.ToListAsync());
+            var usuarios = _context.Usuarios.Include(u => u.AspNetUser).AsQueryable();
+
+            if (!string.IsNullOrEmpty(filtro))
+            {
+                usuarios = usuarios.Where(u =>
+                    u.Nombre.Contains(filtro) ||
+                    u.Apellido.Contains(filtro) ||
+                    u.Email.Contains(filtro));
+            }
+
+            return View(await usuarios.ToListAsync());
         }
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(string id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var usuario = await _context.Usuarios
                 .Include(u => u.AspNetUser)
                 .FirstOrDefaultAsync(m => m.IdUsuario == id);
-            if (usuario == null)
-            {
-                return NotFound();
-            }
+
+            if (usuario == null) return NotFound();
 
             return View(usuario);
         }
@@ -48,13 +52,16 @@ namespace AdministradorTienda.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdUsuario"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["IdUsuario"] = new SelectList(
+                _context.Users,
+                "Id",
+                "FullName",
+                null
+            );
             return View();
         }
 
         // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdUsuario,Nombre,Apellido,Email,Telefono")] Usuario usuario)
@@ -65,38 +72,39 @@ namespace AdministradorTienda.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdUsuario"] = new SelectList(_context.Users, "Id", "Id", usuario.IdUsuario);
+
+            ViewData["IdUsuario"] = new SelectList(
+                _context.Users,
+                "Id",
+                "FullName",
+                usuario.IdUsuario
+            );
             return View(usuario);
         }
 
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var usuario = await _context.Usuarios.FindAsync(id);
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-            ViewData["IdUsuario"] = new SelectList(_context.Users, "Id", "Id", usuario.IdUsuario);
+            if (usuario == null) return NotFound();
+
+            ViewData["IdUsuario"] = new SelectList(
+                _context.Users,
+                "Id",
+                "FullName",
+                usuario.IdUsuario
+            );
             return View(usuario);
         }
 
         // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("IdUsuario,Nombre,Apellido,Email,Telefono")] Usuario usuario)
         {
-            if (id != usuario.IdUsuario)
-            {
-                return NotFound();
-            }
+            if (id != usuario.IdUsuario) return NotFound();
 
             if (ModelState.IsValid)
             {
@@ -107,36 +115,31 @@ namespace AdministradorTienda.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.IdUsuario))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!UsuarioExists(usuario.IdUsuario)) return NotFound();
+                    else throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdUsuario"] = new SelectList(_context.Users, "Id", "Id", usuario.IdUsuario);
+
+            ViewData["IdUsuario"] = new SelectList(
+                _context.Users,
+                "Id",
+                "FullName",
+                usuario.IdUsuario
+            );
             return View(usuario);
         }
 
         // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var usuario = await _context.Usuarios
                 .Include(u => u.AspNetUser)
                 .FirstOrDefaultAsync(m => m.IdUsuario == id);
-            if (usuario == null)
-            {
-                return NotFound();
-            }
+
+            if (usuario == null) return NotFound();
 
             return View(usuario);
         }

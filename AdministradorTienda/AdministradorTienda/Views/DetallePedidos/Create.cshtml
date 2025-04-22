@@ -10,29 +10,54 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h4>Filtrar Productos</h4>
+        <form method="get">
+            <input type="hidden" name="idPedido" value="@ViewBag.IdPedidoPreseleccionado" />
             <div class="form-group">
-                <label asp-for="IdPedido" class="control-label"></label>
-                <select asp-for="IdPedido" class ="form-control" asp-items="ViewBag.IdPedido"></select>
+                <label for="FiltroPor">Filtrar por:</label>
+                <select name="FiltroPor" class="form-control">
+                    <option value="">-- Seleccionar --</option>
+                    <option value="Nombre">Nombre</option>
+                    <option value="Categoria">Categoría</option>
+                    <option value="Precio">Precio</option>
+                </select>
             </div>
             <div class="form-group">
+                <label for="ValorFiltro">Valor del filtro:</label>
+                <input type="text" name="ValorFiltro" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="PrecioMin">Precio mínimo:</label>
+                <input type="number" name="PrecioMin" class="form-control" step="0.01" />
+            </div>
+            <div class="form-group">
+                <label for="PrecioMax">Precio máximo:</label>
+                <input type="number" name="PrecioMax" class="form-control" step="0.01" />
+            </div>
+            <button type="submit" class="btn btn-info">Aplicar Filtro</button>
+        </form>
+        <form asp-action="Create">
+            <div class="form-group">  
+                           <label asp-for="IdPedido" class="control-label"></label>  
+                           <select asp-for="IdPedido" class="form-control" asp-items="ViewBag.IdPedido" disabled="@(ViewBag.IdPedidoPreseleccionado != null ? "disabled" : null)"></select>  
+                           @if (ViewBag.IdPedidoPreseleccionado != null)  
+                           {  
+                               <input type="hidden" name="IdPedido" value="@ViewBag.IdPedidoPreseleccionado" />  
+                           }  
+                       </div>
+            <div class="form-group">
                 <label asp-for="IdProducto" class="control-label"></label>
-                <select asp-for="IdProducto" class ="form-control" asp-items="ViewBag.IdProducto"></select>
+                <select asp-for="IdProducto" class="form-control" asp-items="ViewBag.IdProducto"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Cantidad" class="control-label"></label>
                 <input asp-for="Cantidad" class="form-control" />
-                <span asp-validation-for="Cantidad" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PrecioUnitario" class="control-label"></label>
                 <input asp-for="PrecioUnitario" class="form-control" />
-                <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+            <button type="submit" class="btn btn-success">Guardar</button>
         </form>
     </div>
 </div>

@@ -20,10 +20,20 @@ namespace AdministradorTienda.Controllers
         }
 
         // GET: DetallePedidos
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? idPedido)
         {
-            var applicationDbContext = _context.DetallesPedido.Include(d => d.Pedido).Include(d => d.Producto);
-            return View(await applicationDbContext.ToListAsync());
+            var detalles = _context.DetallesPedido
+                .Include(d => d.Pedido)
+                .Include(d => d.Producto)
+                .AsQueryable();
+
+            if (idPedido.HasValue)
+            {
+                detalles = detalles.Where(d => d.IdPedido == idPedido.Value);
+                ViewBag.FiltroIdPedido = idPedido.Value; // para mostrar en la vista si se desea
+            }
+
+            return View(await detalles.ToListAsync());
         }
 
         // GET: DetallePedidos/Details/5
@@ -47,29 +57,84 @@ namespace AdministradorTienda.Controllers
         }
 
         // GET: DetallePedidos/Create
-        public IActionResult Create()
+        public IActionResult Create(int? idPedido, string FiltroPor, string ValorFiltro, decimal? PrecioMin, decimal? PrecioMax)
         {
-            ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido");
-            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "IdProducto");
+            if (idPedido != null)
+            {
+                ViewData["IdPedido"] = new SelectList(_context.Pedidos.Where(p => p.IdPedido == idPedido), "IdPedido", "IdPedido");
+                ViewBag.IdPedidoPreseleccionado = idPedido;
+            }
+            else
+            {
+                ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido");
+            }
+
+            var productos = _context.Productos.Include(p => p.Categoria).AsQueryable();
+
+            bool hayFiltros = !string.IsNullOrEmpty(FiltroPor) ||
+                              !string.IsNullOrEmpty(ValorFiltro) ||
+                              PrecioMin.HasValue ||
+                              PrecioMax.HasValue;
+
+            if (hayFiltros)
+            {
+                if (!string.IsNullOrEmpty(FiltroPor))
+                {
+                    switch (FiltroPor)
+                    {
+                        case "Nombre":
+                            if (!string.IsNullOrEmpty(ValorFiltro))
+                                productos = productos.Where(p => p.Nombre.Contains(ValorFiltro));
+                            break;
+                        case "Categoria":
+                            if (!string.IsNullOrEmpty(ValorFiltro))
+                                productos = productos.Where(p => p.Categoria.Nombre.Contains(ValorFiltro));
+                            break;
+                        case "Precio":
+                            if (PrecioMin.HasValue)
+                                productos = productos.Where(p => p.Precio >= PrecioMin.Value);
+                            if (PrecioMax.HasValue)
+                                productos = productos.Where(p => p.Precio <= PrecioMax.Value);
+                            break;
+                    }
+                }
+            }
+
+            var productosFiltrados = productos.ToList(); // Se ejecuta la consulta con o sin filtros
+
+            ViewData["IdProducto"] = new SelectList(productosFiltrados, "IdProducto", "Nombre");
+
             return View();
         }
 
         // POST: DetallePedidos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdDetalle,IdPedido,IdProducto,Cantidad,PrecioUnitario")] DetallePedido detallePedido)
         {
+            // Obtener el producto correspondiente
+            var producto = await _context.Productos.FindAsync(detallePedido.IdProducto);
+
+            if (producto == null)
+            {
+                ModelState.AddModelError("IdProducto", "Producto no encontrado.");
+            }
+            else if (detallePedido.Cantidad > producto.Stock)
+            {
+                ModelState.AddModelError("Cantidad", $"La cantidad solicitada ({detallePedido.Cantidad}) supera el stock disponible ({producto.Stock}).");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(detallePedido);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido", detallePedido.IdPedido);
-            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "IdProducto", detallePedido.IdProducto);
-            return View(detallePedido);
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "Nombre", detallePedido.IdProducto);
+
+            return View(detallePedido); // Volvemos a la vista con errores si los hay
         }
 
         // GET: DetallePedidos/Edit/5
@@ -86,13 +151,11 @@ namespace AdministradorTienda.Controllers
                 return NotFound();
             }
             ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido", detallePedido.IdPedido);
-            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "IdProducto", detallePedido.IdProducto);
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "Nombre", detallePedido.IdProducto);
             return View(detallePedido);
         }
 
         // POST: DetallePedidos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdDetalle,IdPedido,IdProducto,Cantidad,PrecioUnitario")] DetallePedido detallePedido)
@@ -123,7 +186,7 @@ namespace AdministradorTienda.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido", detallePedido.IdPedido);
-            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "IdProducto", detallePedido.IdProducto);
+            ViewData["IdProducto"] = new SelectList(_context.Productos, "IdProducto", "Nombre", detallePedido.IdProducto);
             return View(detallePedido);
         }
 

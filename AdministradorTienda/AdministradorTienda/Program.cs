@@ -3,6 +3,7 @@ using CasoPractico2.NoEmailSender;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,10 +20,53 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.Sign
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+    
 builder.Services.AddTransient<IEmailSender, NoEmailSender>();
 
+
 var app = builder.Build();
+
+app.MapGet("/api/ventas", async (ApplicationDbContext db, DateTime? startDate, DateTime? endDate, string? producto) =>
+{
+    var query = db.Pedidos.AsQueryable();
+
+    if (startDate.HasValue)
+        query = query.Where(v => v.FechaPedido >= startDate.Value);
+
+    if (endDate.HasValue)
+        query = query.Where(v => v.FechaPedido <= endDate.Value);
+
+    if (!string.IsNullOrEmpty(producto))
+        query = query.Where(v => v.DetallesPedido.Any(d => d.Producto.Nombre.Contains(producto)));
+
+    var ventas = await query
+        .Include(v => v.DetallesPedido)
+        .ThenInclude(dp => dp.Producto)
+        .ToListAsync();
+
+    return Results.Ok(ventas);
+});
+
+
+app.MapGet("/api/productos", async (ApplicationDbContext db) =>
+{
+    var productos = await db.Productos
+        .Include(p => p.Categoria)
+        .Select(p => new
+        {
+            p.IdProducto,
+            p.Nombre,
+            p.Descripcion,
+            p.Precio,
+            p.Stock,
+            CategoriaNombre = p.Categoria.Nombre
+        })
+        .ToListAsync();
+
+    return Results.Ok(productos);
+});
 
 using (var scope = app.Services.CreateScope())
 {
@@ -44,6 +88,8 @@ using (var scope = app.Services.CreateScope())
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSwagger(); // Habilitar Swagger
+    app.UseSwaggerUI();
     app.UseMigrationsEndPoint();
 }
 else

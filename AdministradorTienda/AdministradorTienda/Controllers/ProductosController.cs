@@ -19,7 +19,6 @@ namespace AdministradorTienda.Controllers
             _context = context;
         }
 
-
         // GET: Productos
         public async Task<IActionResult> Index(string FiltroPor, string ValorFiltro, decimal? PrecioMin, decimal? PrecioMax)
         {
@@ -49,22 +48,18 @@ namespace AdministradorTienda.Controllers
             return View(await productos.ToListAsync());
         }
 
-
         // GET: Productos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var producto = await _context.Productos
                 .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.IdProducto == id);
+
             if (producto == null)
-            {
                 return NotFound();
-            }
 
             return View(producto);
         }
@@ -72,13 +67,11 @@ namespace AdministradorTienda.Controllers
         // GET: Productos/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "IdCategoria");
+            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "Nombre");
             return View();
         }
 
         // POST: Productos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdProducto,Nombre,Descripcion,Precio,Stock,IdCategoria")] Producto producto)
@@ -89,7 +82,8 @@ namespace AdministradorTienda.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "IdCategoria", producto.IdCategoria);
+
+            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "Nombre", producto.IdCategoria);
             return View(producto);
         }
 
@@ -97,30 +91,23 @@ namespace AdministradorTienda.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var producto = await _context.Productos.FindAsync(id);
             if (producto == null)
-            {
                 return NotFound();
-            }
-            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "IdCategoria", producto.IdCategoria);
+
+            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "Nombre", producto.IdCategoria);
             return View(producto);
         }
 
         // POST: Productos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdProducto,Nombre,Descripcion,Precio,Stock,IdCategoria")] Producto producto)
         {
             if (id != producto.IdProducto)
-            {
                 return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
@@ -132,17 +119,14 @@ namespace AdministradorTienda.Controllers
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ProductoExists(producto.IdProducto))
-                    {
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "IdCategoria", producto.IdCategoria);
+
+            ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "Nombre", producto.IdCategoria);
             return View(producto);
         }
 
@@ -150,17 +134,14 @@ namespace AdministradorTienda.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var producto = await _context.Productos
                 .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.IdProducto == id);
+
             if (producto == null)
-            {
                 return NotFound();
-            }
 
             return View(producto);
         }
@@ -172,9 +153,7 @@ namespace AdministradorTienda.Controllers
         {
             var producto = await _context.Productos.FindAsync(id);
             if (producto != null)
-            {
                 _context.Productos.Remove(producto);
-            }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

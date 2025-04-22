@@ -4,39 +4,53 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalles del Pedido</h1>
 
 <div>
     <h4>Pedido</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cliente)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.IdCliente)
+        <dd class="col-sm-10">
+            @($"{Model.Cliente?.Nombre} {Model.Cliente?.Apellido}")
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.UsuarioGestor)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UsuarioGestor.IdUsuario)
+        <dd class="col-sm-10">
+            @($"{Model.UsuarioGestor?.Nombre} {Model.UsuarioGestor?.Apellido}")
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FechaPedido)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaPedido)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Estado)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt class="col-sm-2">
+            Total del Pedido
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.TotalPedido.ToString("C") <!-- Muestra como moneda -->
         </dd>
     </dl>
 </div>
+
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdPedido">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="DescargarFactura" asp-route-id="@Model.IdPedido">Descargar Factura</a> |
+    <a asp-controller="DetallePedidos" asp-action="Index" asp-route-idPedido="@Model.IdPedido">Ver Detalles</a> |
+    <a asp-controller="DetallePedidos" asp-action="Create" asp-route-idPedido="@Model.IdPedido">Añadir Detalle</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.IdPedido">Editar</a> |
+    <a asp-action="Index">Volver a la Lista</a>
 </div>

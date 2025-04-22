@@ -50,30 +50,108 @@ namespace AdministradorTienda.Controllers
         // GET: Pagos/Create
         public IActionResult Create()
         {
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente");
-            ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido");
-            ViewData["IdUsuarioRegistro"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario");
+            // Crear una lista de clientes con el nombre completo
+            ViewData["IdCliente"] = new SelectList(
+                _context.Clientes
+                    .Select(c => new { c.IdCliente, NombreCompleto = c.Nombre + " " + c.Apellido })
+                    .ToList(),
+                "IdCliente",
+                "NombreCompleto"
+            );
+
             return View();
         }
 
-        // POST: Pagos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdPago,IdCliente,IdPedido,IdUsuarioRegistro,Monto,FechaPago,MetodoPago")] Pago pago)
+        public async Task<IActionResult> Create(decimal Monto, int IdCliente, string MetodoPago)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(pago);
+                // Obtener el usuario logueado
+                var aspNetUserId = _context.Users
+                    .Where(u => u.UserName == User.Identity.Name)
+                    .Select(u => u.Id)
+                    .FirstOrDefault();
+
+                if (aspNetUserId == null)
+                {
+                    ModelState.AddModelError("", "No se pudo identificar el usuario logueado.");
+                    return View();
+                }
+
+                // Buscar en tabla Usuarios el que tiene ese IdAspNetUser
+                var usuarioRegistro = await _context.Usuarios
+                    .FirstOrDefaultAsync(u => u.IdUsuario == aspNetUserId);
+
+                if (usuarioRegistro == null)
+                {
+                    ModelState.AddModelError("", "No se encontró el usuario registrado en la base de datos.");
+                    return View();
+                }
+
+                // Obtener el pedido más reciente del cliente
+                var pedidoReciente = await _context.Pedidos
+                    .Where(p => p.IdCliente == IdCliente)
+                    .OrderByDescending(p => p.FechaPedido)
+                    .FirstOrDefaultAsync();
+
+                if (pedidoReciente == null)
+                {
+                    ModelState.AddModelError("", "El cliente no tiene pedidos registrados.");
+                    return View();
+                }
+
+                // Crear el objeto de pago
+                var pago = new Pago
+                {
+                    IdCliente = IdCliente,
+                    IdPedido = pedidoReciente.IdPedido,
+                    IdUsuarioRegistro = usuarioRegistro.IdUsuario,
+                    FechaPago = DateTime.Now,
+                    Monto = Monto,
+                    MetodoPago = MetodoPago
+                };
+
+                _context.Pagos.Add(pago);
+
+                // Descontar saldo de cuenta del cliente
+                var cuentaCliente = await _context.CuentasClientes
+                    .FirstOrDefaultAsync(c => c.IdCliente == IdCliente);
+
+                if (cuentaCliente != null)
+                {
+                    cuentaCliente.Saldo -= Monto;
+
+                    if (cuentaCliente.Saldo < 0)
+                    {
+                        ModelState.AddModelError("", "El pago excede el saldo disponible del cliente.");
+                        return View();
+                    }
+
+                    _context.Update(cuentaCliente);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se encontró la cuenta del cliente.");
+                    return View();
+                }
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente", pago.IdCliente);
-            ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido", pago.IdPedido);
-            ViewData["IdUsuarioRegistro"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", pago.IdUsuarioRegistro);
-            return View(pago);
+
+            // Si algo falla, recargar el ViewData del cliente
+            ViewData["IdCliente"] = new SelectList(
+                _context.Clientes.Select(c => new { c.IdCliente, NombreCompleto = c.Nombre + " " + c.Apellido }).ToList(),
+                "IdCliente",
+                "NombreCompleto",
+                IdCliente
+            );
+
+            return View();
         }
+
 
         // GET: Pagos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -88,20 +166,22 @@ namespace AdministradorTienda.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente", pago.IdCliente);
-            ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido", pago.IdPedido);
-            ViewData["IdUsuarioRegistro"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", pago.IdUsuarioRegistro);
+
             return View(pago);
         }
+
+
 
         // POST: Pagos/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdPago,IdCliente,IdPedido,IdUsuarioRegistro,Monto,FechaPago,MetodoPago")] Pago pago)
+        public async Task<IActionResult> Edit(int id, string metodoPago)
         {
-            if (id != pago.IdPago)
+            // Verificar si el pago existe
+            var pago = await _context.Pagos.FindAsync(id);
+            if (pago == null)
             {
                 return NotFound();
             }
@@ -110,6 +190,10 @@ namespace AdministradorTienda.Controllers
             {
                 try
                 {
+                    // Actualizar solo el MetodoPago
+                    pago.MetodoPago = metodoPago;
+
+                    // Guardar cambios
                     _context.Update(pago);
                     await _context.SaveChangesAsync();
                 }
@@ -126,11 +210,17 @@ namespace AdministradorTienda.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente", pago.IdCliente);
-            ViewData["IdPedido"] = new SelectList(_context.Pedidos, "IdPedido", "IdPedido", pago.IdPedido);
-            ViewData["IdUsuarioRegistro"] = new SelectList(_context.Usuarios, "IdUsuario", "IdUsuario", pago.IdUsuarioRegistro);
+
             return View(pago);
         }
+
+
+
+        private bool PedidoExists(int idPedido)
+        {
+            throw new NotImplementedException();
+        }
+
 
         // GET: Pagos/Delete/5
         public async Task<IActionResult> Delete(int? id)

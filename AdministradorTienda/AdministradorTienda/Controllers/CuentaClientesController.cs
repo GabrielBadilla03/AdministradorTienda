@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -48,13 +47,18 @@ namespace AdministradorTienda.Controllers
         // GET: CuentaClientes/Create
         public IActionResult Create()
         {
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente");
+            // Crear una lista de clientes con el nombre completo
+            ViewData["IdCliente"] = new SelectList(
+                _context.Clientes
+                    .Select(c => new { c.IdCliente, NombreCompleto = c.Nombre + " " + c.Apellido })
+                    .ToList(),
+                "IdCliente",
+                "NombreCompleto"
+            );
             return View();
         }
 
         // POST: CuentaClientes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdCuenta,IdCliente,Saldo")] CuentaCliente cuentaCliente)
@@ -65,7 +69,15 @@ namespace AdministradorTienda.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente", cuentaCliente.IdCliente);
+            // Crear una lista de clientes con el nombre completo
+            ViewData["IdCliente"] = new SelectList(
+                _context.Clientes
+                    .Select(c => new { c.IdCliente, NombreCompleto = c.Nombre + " " + c.Apellido })
+                    .ToList(),
+                "IdCliente",
+                "NombreCompleto",
+                cuentaCliente.IdCliente
+            );
             return View(cuentaCliente);
         }
 
@@ -82,13 +94,19 @@ namespace AdministradorTienda.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente", cuentaCliente.IdCliente);
+            // Crear una lista de clientes con el nombre completo
+            ViewData["IdCliente"] = new SelectList(
+                _context.Clientes
+                    .Select(c => new { c.IdCliente, NombreCompleto = c.Nombre + " " + c.Apellido })
+                    .ToList(),
+                "IdCliente",
+                "NombreCompleto",
+                cuentaCliente.IdCliente
+            );
             return View(cuentaCliente);
         }
 
         // POST: CuentaClientes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdCuenta,IdCliente,Saldo")] CuentaCliente cuentaCliente)
@@ -118,7 +136,15 @@ namespace AdministradorTienda.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "IdCliente", "IdCliente", cuentaCliente.IdCliente);
+            // Crear una lista de clientes con el nombre completo
+            ViewData["IdCliente"] = new SelectList(
+                _context.Clientes
+                    .Select(c => new { c.IdCliente, NombreCompleto = c.Nombre + " " + c.Apellido })
+                    .ToList(),
+                "IdCliente",
+                "NombreCompleto",
+                cuentaCliente.IdCliente
+            );
             return View(cuentaCliente);
         }
 
