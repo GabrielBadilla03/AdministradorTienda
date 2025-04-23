@@ -6,9 +6,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdministradorTienda.Data;
 using AdministradorTienda.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdministradorTienda.Controllers
 {
+    [Authorize(Roles = "Administrador,Contador")]
+
     public class CuentaClientesController : Controller
     {
         private readonly ApplicationDbContext _context;

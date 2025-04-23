@@ -13,9 +13,12 @@ using QuestPDF.Infrastructure;
 using ClosedXML.Excel;
 using SkiaSharp;
 using QuestPDF;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdministradorTienda.Controllers
 {
+    [Authorize(Roles = "Administrador")]
+
     public class ReportesController : Controller
     {
         private readonly ApplicationDbContext _context;

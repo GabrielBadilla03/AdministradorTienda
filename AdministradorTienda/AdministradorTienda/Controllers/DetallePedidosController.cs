@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdministradorTienda.Data;
 using AdministradorTienda.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdministradorTienda.Controllers
 {
+    [Authorize(Roles = "Administrador,Repartidor,Vendedor")]
+
     public class DetallePedidosController : Controller
     {
         private readonly ApplicationDbContext _context;

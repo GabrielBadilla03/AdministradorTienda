@@ -7,16 +7,22 @@ using System.Security.Claims;
 using QuestPDF.Helpers;
 using QuestPDF.Fluent;
 using QuestPDF.Infrastructure;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using AdministradorTienda.EmailSender;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdministradorTienda.Controllers
 {
+    [Authorize(Roles = "Administrador,Repartidor,Vendedor")]
+
     public class PedidosController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public PedidosController(ApplicationDbContext context)
+        private readonly ICustomEmailSender _emailSender;
+        public PedidosController(ApplicationDbContext context, ICustomEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // GET: Pedidos
@@ -150,7 +156,6 @@ namespace AdministradorTienda.Controllers
         }
 
         // POST: Pedidos/Edit/5
-        // POST: Pedidos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, DateTime fechaPedido, string estado, decimal? descuento)
@@ -204,6 +209,9 @@ namespace AdministradorTienda.Controllers
                         MetodoPago = "Contado"
                     };
                     _context.Pagos.Add(pago);
+
+                    // Enviar correo cuando el estado sea "Pagado"
+                    await EnviarCorreoEstadoCambio(pedido, "Pagado");
                     break;
 
                 case "Entregado":
@@ -214,6 +222,9 @@ namespace AdministradorTienda.Controllers
                     }
 
                     cuentaCliente.Saldo += total;
+
+                    // Enviar correo cuando el estado sea "Entregado"
+                    await EnviarCorreoEstadoCambio(pedido, "Entregado");
                     break;
 
                 case "Pendiente":
@@ -257,6 +268,21 @@ namespace AdministradorTienda.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // Método para enviar correo dependiendo del estado
+        private async Task EnviarCorreoEstadoCambio(Pedido pedido, string estado)
+        {
+            var cliente = await _context.Clientes.FirstOrDefaultAsync(c => c.IdCliente == pedido.IdCliente);
+
+            if (cliente == null)
+                return;
+
+            var emailSubject = $"Estado del pedido {pedido.IdPedido} - {estado}";
+            var emailBody = $"Hola {cliente.Nombre},<br/><br/>Tu pedido con ID {pedido.IdPedido} ha sido marcado como {estado}.<br/>" +
+                            $"El monto total es: {pedido.DetallesPedido.Sum(d => d.Cantidad * d.PrecioUnitario):C2}.<br/><br/>" +
+                            "Gracias por tu compra.<br/>Farmacia Saule";
+
+            await _emailSender.SendEmailAsync(cliente.Email, emailSubject, emailBody);
+        }
 
 
         // GET: Pedidos/Delete/5

@@ -4,11 +4,12 @@
 // Consulte el archivo LICENSE para más detalles.
 
 using AdministradorTienda.Data;
-using CasoPractico2.NoEmailSender;
+using AdministradorTienda.EmailSender;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Packaging;
+using Proyecto_FarmaScan.Service;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
@@ -32,30 +33,12 @@ builder.Services.AddSwaggerGen();
 // Por la siguiente línea:
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
-builder.Services.AddTransient<IEmailSender, NoEmailSender>();
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddTransient<ICustomEmailSender, EmailSender>();
+builder.Services.AddScoped<IErrorService, ErrorService>();
+
 
 var app = builder.Build();
-
-app.MapGet("/api/ventas", async (ApplicationDbContext db, DateTime? startDate, DateTime? endDate, string? producto) =>
-{
-    var query = db.Pedidos.AsQueryable();
-
-    if (startDate.HasValue)
-        query = query.Where(v => v.FechaPedido >= startDate.Value);
-
-    if (endDate.HasValue)
-        query = query.Where(v => v.FechaPedido <= endDate.Value);
-
-    if (!string.IsNullOrEmpty(producto))
-        query = query.Where(v => v.DetallesPedido.Any(d => d.Producto.Nombre.Contains(producto)));
-
-    var ventas = await query
-        .Include(v => v.DetallesPedido)
-        .ThenInclude(dp => dp.Producto)
-        .ToListAsync();
-
-    return Results.Ok(ventas);
-});
 
 app.MapGet("/api/productos", async (ApplicationDbContext db) =>
 {

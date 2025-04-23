@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using AdministradorTienda.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AdministradorTienda.Controllers

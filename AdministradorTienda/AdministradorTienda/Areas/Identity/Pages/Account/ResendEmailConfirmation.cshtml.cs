@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using AdministradorTienda.EmailSender;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -20,9 +21,9 @@ namespace AdministradorTienda.Areas.Identity.Pages.Account
     public class ResendEmailConfirmationModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly IEmailSender _emailSender;
+        private readonly ICustomEmailSender _emailSender;
 
-        public ResendEmailConfirmationModel(UserManager<IdentityUser> userManager, IEmailSender emailSender)
+        public ResendEmailConfirmationModel(UserManager<IdentityUser> userManager, ICustomEmailSender emailSender)
         {
             _userManager = userManager;
             _emailSender = emailSender;

@@ -5,6 +5,7 @@
 using System;
 using System.Text;
 using System.Threading.Tasks;
+using AdministradorTienda.EmailSender;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -18,9 +19,9 @@ namespace AdministradorTienda.Areas.Identity.Pages.Account
     public class RegisterConfirmationModel : PageModel
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly IEmailSender _sender;
+        private readonly ICustomEmailSender _sender;
 
-        public RegisterConfirmationModel(UserManager<IdentityUser> userManager, IEmailSender sender)
+        public RegisterConfirmationModel(UserManager<IdentityUser> userManager, ICustomEmailSender sender)
         {
             _userManager = userManager;
             _sender = sender;

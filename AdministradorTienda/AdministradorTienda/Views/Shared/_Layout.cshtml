@@ -124,7 +124,6 @@
 </head>
 <body>
     <div class="main-container">
-      
         <header>
             <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow mb-0">
                 <div class="container-fluid">
@@ -134,23 +133,46 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-center">
                         <ul class="navbar-nav text-center">
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Categorias" asp-action="index">📂 Categorías</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Clientes" asp-action="index">👥 Clientes</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="CuentaClientes" asp-action="index">💳 CuentaClientes</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Pagos" asp-action="index">💰 Pagos</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Pedidos" asp-action="index">🛒 Pedidos</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Usuarios" asp-action="index">🔐 Usuarios</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Reportes" asp-action="index">🔐 Reportes</a></li>
-                            <li class="nav-item"><a class="nav-link text-dark" asp-controller="Productos" asp-action="index">🔐 Productos</a></li>
+                            @if (User.IsInRole("Administrador") || User.IsInRole("Vendedor"))
+                            {
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Categorias" asp-action="Index">📂 Categorías</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Clientes" asp-action="Index">👥 Clientes</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Productos" asp-action="Index">🔐 Productos</a></li>
+                            }
+                            @if (User.IsInRole("Administrador") || User.IsInRole("Contador"))
+                            {
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="CuentaClientes" asp-action="Index">💳 CuentaClientes</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Pagos" asp-action="Index">💰 Pagos</a></li>
+                            }
+                            @if (User.IsInRole("Administrador") || User.IsInRole("Vendedor") || User.IsInRole("Repartidor"))
+                            {
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Pedidos" asp-action="Index">🛒 Pedidos</a></li>
+                            }
+                            @if (User.IsInRole("Administrador"))
+                            {
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Usuarios" asp-action="Index">🔐 Usuarios</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Reportes" asp-action="Index">📊 Reportes</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-controller="Alertas" asp-action="Index">🚨 Alertas</a></li>
+                            }
                         </ul>
                     </div>
                     <div class="d-flex ms-3">
-                        <a class="nav-link text-dark fw-bold" asp-area="Identity" asp-page="/Account/Register">📝 Register</a>
-                        <a class="nav-link text-dark fw-bold" asp-area="Identity" asp-page="/Account/Login">🔑 Login</a>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <a class="nav-link text-dark fw-bold" asp-area="Identity" asp-page="/Account/Register">📝 Register</a>
+                            <a class="nav-link text-dark fw-bold" asp-area="Identity" asp-page="/Account/Login">🔑 Login</a>
+                        }
+                        else
+                        {
+                            <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm">
+                                <button type="submit" class="nav-link btn btn-link text-dark fw-bold">🚪 Logout</button>
+                            </form>
+                        }
                     </div>
                 </div>
             </nav>
         </header>
+
 
         
         @{

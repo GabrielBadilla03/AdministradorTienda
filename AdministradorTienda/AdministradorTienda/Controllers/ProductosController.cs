@@ -7,16 +7,22 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AdministradorTienda.Data;
 using AdministradorTienda.Models;
+using AdministradorTienda.EmailSender;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AdministradorTienda.Controllers
 {
+    [Authorize(Roles = "Administrador,Vendedor")]
+
     public class ProductosController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly ICustomEmailSender _emailSender;
 
-        public ProductosController(ApplicationDbContext context)
+        public ProductosController(ApplicationDbContext context, ICustomEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // GET: Productos
@@ -80,12 +86,33 @@ namespace AdministradorTienda.Controllers
             {
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
+
+                // Enviar correo cuando un nuevo producto sea agregado
+                await EnviarCorreoNuevoProducto(producto);
+
                 return RedirectToAction(nameof(Index));
             }
 
             ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "Nombre", producto.IdCategoria);
             return View(producto);
         }
+
+        // Método para enviar correo sobre el nuevo producto
+        private async Task EnviarCorreoNuevoProducto(Producto producto)
+        {
+            var emailSubject = $"Nuevo Producto Agregado: {producto.Nombre}";
+            var emailBody = $"Hola Administrador,<br/><br/>Un nuevo producto ha sido agregado al sistema:<br/>" +
+                            $"<strong>Nombre:</strong> {producto.Nombre}<br/>" +
+                            $"<strong>Descripción:</strong> {producto.Descripcion}<br/>" +
+                            $"<strong>Precio:</strong> {producto.Precio:C2}<br/>" +
+                            $"<strong>Stock:</strong> {producto.Stock}<br/>" +
+                            $"<strong>Categoría:</strong> {producto.Categoria?.Nombre ?? "No asignada"}<br/><br/>" +
+                            "Gracias por tu atención.<br/>Farmacia Saule";
+
+            // Puedes enviar el correo a una dirección específica, como un administrador
+            await _emailSender.SendEmailAsync("admin@tienda.com", emailSubject, emailBody);
+        }
+
 
         // GET: Productos/Edit/5
         public async Task<IActionResult> Edit(int? id)

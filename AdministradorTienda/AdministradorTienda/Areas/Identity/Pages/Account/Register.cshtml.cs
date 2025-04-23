@@ -11,6 +11,7 @@ using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
 using AdministradorTienda.Data;
+using AdministradorTienda.EmailSender;
 using AdministradorTienda.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -31,7 +32,7 @@ namespace AdministradorTienda.Areas.Identity.Pages.Account
         private readonly IUserStore<IdentityUser> _userStore;
         private readonly IUserEmailStore<IdentityUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        private readonly ICustomEmailSender _emailSender;
         private readonly ApplicationDbContext _context;
 
         public RegisterModel(
@@ -39,7 +40,7 @@ namespace AdministradorTienda.Areas.Identity.Pages.Account
             IUserStore<IdentityUser> userStore,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender,
+            ICustomEmailSender emailSender,
             ApplicationDbContext applicationDbContext)
         {
             _userManager = userManager;
