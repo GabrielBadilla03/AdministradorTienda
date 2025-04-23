@@ -62,10 +62,29 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        // Obtener precios desde Razor (ViewBag -> JSON)
+        const precios = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.ProductosConPrecio));
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const selectProducto = document.querySelector('[name="IdProducto"]');
+            const inputPrecioUnitario = document.querySelector('[name="PrecioUnitario"]');
+
+            // Escuchar cambios en el select de productos
+            selectProducto.addEventListener("change", function () {
+                const selectedId = this.value;
+                if (precios[selectedId]) {
+                    inputPrecioUnitario.value = precios[selectedId].toFixed(2);
+                } else {
+                    inputPrecioUnitario.value = "";
+                }
+            });
+
+            // Disparar el evento al cargar para precargar el precio si ya hay producto seleccionado
+            selectProducto.dispatchEvent(new Event("change"));
+        });
+    </script>
+
 }

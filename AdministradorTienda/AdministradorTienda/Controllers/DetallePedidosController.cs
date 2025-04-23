@@ -107,6 +107,10 @@ namespace AdministradorTienda.Controllers
 
             ViewData["IdProducto"] = new SelectList(productosFiltrados, "IdProducto", "Nombre");
 
+            ViewBag.ProductosConPrecio = productosFiltrados
+                .Select(p => new { p.IdProducto, p.Precio })
+                .ToDictionary(p => p.IdProducto, p => p.Precio);
+
             return View();
         }
 
